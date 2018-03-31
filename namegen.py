@@ -12,13 +12,15 @@ namegen.generate(count) returns a list of names, so you should probably save
 the returned value to a variable.
 """
 
+# Imports
 import os
 import random
 import urllib.request
 
-if not os.path.isfile("desiquintans.com_nounlist.txt"):
+
+if not os.path.isfile("desiquintans.com_nounlist.txt"):  # if the noun list doesn't exist
     urllib.request.urlretrieve("http://benstar.wc.lt/random_files/desiquintans.com_nounlist.txt",
-                               "desiquintans.com_nounlist.txt")
+                               "desiquintans.com_nounlist.txt")  # download the noun list
 
 
 def generate(count, debug):
@@ -35,13 +37,13 @@ def generate(count, debug):
     n = 1
     while count >= n:
         word_pre = random.choice(words)  # choose a random word from the list of words
-        word_pre = word_pre.capitalize()
+        word_pre = word_pre.capitalize()  # capitalize the first letter
         wprefix = random.choice(wprefixes)  # choose a random prefix from the list
         wsuffix = random.choice(wsuffixes)  # choose a random suffix from the list
         wsuffix2 = wsuffix
         if wsuffix == "ator" or wsuffix == "anator":
             if random.choice([True, False, False]):
-                wsuffix2 = wsuffix + "ifier"
+                wsuffix2 = wsuffix + "ifier"  # add the extra suffix of "ifier"
 
         caps = random.choice([True, False, False, False])  # if we should make the name all caps
         if caps:  # if we are going to make it all caps
@@ -67,7 +69,7 @@ def generate(count, debug):
     return names  # return the generated names
 
 
-if __name__ == '__main__':  # if the program was not run as an import
+if __name__ == '__main__':  # if the program wasn't run as an import
     print("Generating names")
     usernames = generate(100, True)  # use our function to generate 100 names into the variable usernames
     print("Opening file")
