@@ -26,7 +26,7 @@ if not os.path.isfile("desiquintans.com_nounlist.txt"):
     urllib.request.urlretrieve(nouns_url, "desiquintans.com_nounlist.txt")
 
 
-def generate(count, debug):
+def generate(count=1, debug=False):
     with open("desiquintans.com_nounlist.txt") as f:  # open the word list file
         words = f.readlines()  # read all lines into a list
     words = [x.strip() for x in words]  # remove the "\n" from each word
