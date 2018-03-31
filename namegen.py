@@ -10,6 +10,8 @@ then use namegen.generate(count).
 
 namegen.generate(count) returns a list of names, so you should probably save
 the returned value to a variable.
+
+https://github.com/BBaoVanC/NameGenerator
 """
 
 # Imports
