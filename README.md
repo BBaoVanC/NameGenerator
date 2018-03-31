@@ -1,7 +1,6 @@
 # NameGenerator
 
-This is a name generator that I wrote which can generate some pretty silly
-names!
+Robust name generator that generates very funny names!
 
 ### Features:
   * Can be imported as a module
@@ -17,7 +16,7 @@ Use defaults (one name and debug disabled):
 ```python
 import namegen
 
-# this uses the defaults which are one name and debug off
+# this uses the defaults which are one name and debug disabled
 print(namegen.generate())
 ```
 Prompt the user for the amount of names and enable debug:
