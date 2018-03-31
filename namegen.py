@@ -18,6 +18,7 @@ https://github.com/BBaoVanC/NameGenerator
 import os
 import random
 import urllib.request
+import logging
 
 
 # this is the url of the noun list
@@ -29,6 +30,11 @@ if not os.path.isfile("desiquintans.com_nounlist.txt"):
 
 
 def generate(count=1, debug=False):
+    if debug:
+        logging.basicConfig(level=logging.DEBUG)
+    else:
+        logging.basicConfig(level=logging.INFO)
+
     with open("desiquintans.com_nounlist.txt") as f:  # open the word list file
         words = f.readlines()  # read all lines into a list
     words = [x.strip() for x in words]  # remove the "\n" from each word
@@ -71,8 +77,7 @@ def generate(count=1, debug=False):
         number = random.randint(0, 999)
         # puts together the different parts of the username
         name = str(word) + str(space) + str(number)
-        if debug:  # if debug mode is enabled
-            print("Generated name: " + name)
+        logging.debug("Generated name: " + name)
         names.append(name)  # add name to list of generated names
         n = n + 1  # increases our loop counter
 
@@ -80,10 +85,11 @@ def generate(count=1, debug=False):
 
 
 if __name__ == '__main__':  # if the program wasn't run as an import
-    print("Generating names")
+    logging.basicConfig(level=logging.DEBUG)
+    logging.debug("Generating names")
     # use our function to generate 100 names into the variable usernames
     usernames = generate(100, True)
-    print("Opening file")
+    logging.debug("Opening file")
     # open the list of names. + means to create the file if it doesn't exist
     file = open("names.txt", "w+")
 
@@ -95,7 +101,7 @@ if __name__ == '__main__':  # if the program wasn't run as an import
     usernames2[-1] = usernames2[-1].strip()  # remove newline from last item
     for item in usernames2:
         file.write(item)  # write each username to the file
-        # print("Writing name: " + item)
+        logging.debug("Writing name: " + item)
 
     # ================================UNOPTIMIZED ALGORITHM================== #
     # usernames2 = list()  # create new empty list named usernames2           #
@@ -111,6 +117,6 @@ if __name__ == '__main__':  # if the program wasn't run as an import
     #     file.write(username)  # write username to the file                  #
     # ================================UNOPTIMIZED ALGORITHM================== #
 
-    print("Saving file")
+    logging.debug("Saving file")
     file.close()  # close the file and apply our changes
-    print("Finished!")
+    logging.debug("Finished!")
