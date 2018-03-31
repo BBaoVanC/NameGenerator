@@ -32,8 +32,5 @@ for name in names:
   print(name)
 ```
 ---
-### Credit Requirements:
-  1. Include *https://github.com/BBaoVanC/NameGenerator* in your credits and as a comment at the beginning of each program which uses it.
-  2. Do not use this program as your own work.
-  3. If you make edits to it, make sure to keep the link to the Github repository in the block comment at the beginning.
-  4. Remember that you can always send your edited version to me by forking the project and sending a pull request!
+### License
+This is licensed under the MIT license. For more information, please refer to [`LICENSE.txt`](https://github.com/BBaoVanC/NNameGenerator/blob/master/LICENSE.txt)
