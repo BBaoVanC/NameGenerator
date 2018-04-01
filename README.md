@@ -1,11 +1,15 @@
 # NameGenerator
 
+[![AWESOMENESS](https://img.shields.io/badge/awesomeness-maximum-00a0af.svg?style=flat-square)](https://www.youtube.com/channel/UCCiDxF_RZ4fTU_gGJRz-fwQ)
 [![Travis](https://img.shields.io/travis/BBaoVanC/NameGenerator.svg?style=flat-square)](https://github.com/BBaoVanC/NameGenerator)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
+[![license](https://img.shields.io/github/license/BBaoVanC/NameGenerator.svg?style=flat-square)](https://github.com/BBaoVanC/NameGenerator/blob/master/LICENSE.txt)
 [![Github All Releases](https://img.shields.io/github/downloads/BBaoVanC/NameGenerator/total.svg?style=flat-square)](https://github.com/BBaoVanC/NameGenerator)
 [![Codacy grade](https://img.shields.io/codacy/grade/58132ef8dc1d4d29b25d43a0ceb9b181.svg?style=flat-square)](https://github.com/BBaoVanC/NameGenerator)
+[![GitHub watchers](https://img.shields.io/github/watchers/BBaoVanC/NameGenerator.svg?style=flat-square&label=Watch)](https://github.com/BBaoVanC/NameGenerator)
+[![GitHub stars](https://img.shields.io/github/stars/BBaoVanC/NameGenerator.svg?style=flat-square&label=Stars)](https://github.com/BBaoVanC/NameGenerator)
 
-
+[![GitHub issues](https://img.shields.io/github/issues-raw/BBaoVanC/NameGenerator.svg?style=flat-square)](https://github.com/BBaoVanC/NameGenerator/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen)
+[![GitHub closed issues](https://img.shields.io/github/issues-closed-raw/BBaoVanC/NameGenerator.svg?style=flat-square)](https://github.com/BBaoVanC/NameGenerator/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aclosed)
 
 Robust name generator that generates awesome names!
 
