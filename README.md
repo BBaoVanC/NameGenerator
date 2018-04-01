@@ -1,12 +1,13 @@
 # NameGenerator
 
-Robust name generator that generates very funny names!
+Robust name generator that generates awesome names!
 
 ### Features:
+  * Easy to use
   * Can be imported as a module
   * Only one function when imported as a module
   * Can be run directly as a standalone program
-  * Easy to use
+  * Always tested before release
 
 ---
 ### Examples:
