@@ -1,5 +1,12 @@
 # NameGenerator
 
+[![Travis](https://img.shields.io/travis/BBaoVanC/NameGenerator.svg?style=flat-square)](https://github.com/BBaoVanC/NameGenerator)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
+[![Github All Releases](https://img.shields.io/github/downloads/BBaoVanC/NameGenerator/total.svg?style=flat-square)](https://github.com/BBaoVanC/NameGenerator)
+[![Codacy grade](https://img.shields.io/codacy/grade/58132ef8dc1d4d29b25d43a0ceb9b181.svg?style=flat-square)](https://github.com/BBaoVanC/NameGenerator)
+
+
+
 Robust name generator that generates awesome names!
 
 ### Features:
