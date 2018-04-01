@@ -86,9 +86,16 @@ def generate(count=1, debug=False):
 
 if __name__ == '__main__':  # if the program wasn't run as an import
     logging.basicConfig(level=logging.DEBUG)
+    while True:
+        nameamt = input("Amount of names to generate: ")
+        try:
+            nameamt2 = int(nameamt)
+            break
+        except ValueError:
+            logging.error("Input was not a number!")
     logging.debug("Generating names")
     # use our function to generate 100 names into the variable usernames
-    usernames = generate(100, True)
+    usernames = generate(nameamt2, True)
     logging.debug("Opening file")
     # open the list of names. + means to create the file if it doesn't exist
     file = open("names.txt", "w+")
