@@ -23,7 +23,7 @@ import sys
 
 
 # this is the url of the noun list
-nouns_url = "http://benstar.wc.lt/random_files/desiquintans.com_nounlist.txt"
+nouns_url = "https://f002.backblazeb2.com/file/bbaovanc-share/desiquintans.com_nounlist.txt"
 # if the list doesn't exist
 if not os.path.isfile("desiquintans.com_nounlist.txt"):
     # download the noun list
