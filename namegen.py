@@ -107,21 +107,6 @@ if __name__ == '__main__':  # if the program wasn't run as an import
     for item in usernames2:
         file.write(item)  # write each username to the file
         logging.debug("Writing name: " + item)
-
-    # ================================UNOPTIMIZED ALGORITHM================== #
-    # usernames2 = list()  # create new empty list named usernames2           #
-    # for item in usernames:                                                  #
-    #     item = item + "\n"  # add a newline to the end of each name         #
-    #     usernames2.append(item)                                             #
-    # lastname = usernames2[-1]  # set variable lastname to the last name     #
-    # lastname = lastname.strip()  # remove newline character from lastname   #
-    # usernames2 = usernames2[:-1]  # remove last item from usernames2        #
-    # usernames2.append(lastname)  # add lastname to usernames2               #
-    #                                                                         #
-    # for username in usernames2:  # for each username                        #
-    #     file.write(username)  # write username to the file                  #
-    # ================================UNOPTIMIZED ALGORITHM================== #
-
     logging.debug("Saving file")
     file.close()  # close the file and apply our changes
     logging.debug("Finished!")
