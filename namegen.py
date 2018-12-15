@@ -30,6 +30,10 @@ if not os.path.isfile("desiquintans.com_nounlist.txt"):
     urllib.request.urlretrieve(nouns_url, "desiquintans.com_nounlist.txt")
 
 
+class ArgError(Exception):
+    pass
+
+
 def generate(count=1, debug=False):
     if debug:
         logging.basicConfig(level=logging.DEBUG)
@@ -86,17 +90,30 @@ def generate(count=1, debug=False):
 
 
 if __name__ == '__main__':  # if the program wasn't run as an import
-    logging.basicConfig(level=logging.DEBUG)
-    try:
-        nameamt = int(sys.argv[1])
-    except IndexError:
-        nameamt = 100
+    cmdline = sys.argv[1:]
+    args = {"amt": 100,
+            "debug": False,
+            "file": "names.txt"
+            }
+    for arg in cmdline:
+        if arg.startswith("amt="):
+            args["amt"] = int(arg.split("=")[1])
+        elif arg.startswith("debug="):
+            b = arg.split("=")[1].capitalize()
+            if b == "True":
+                logging.basicConfig(level=logging.DEBUG)
+            elif b == "False":
+                logging.basicConfig(level=logging.INFO)
+            else:
+                raise(ArgError("Arg for 'debug' was neither True nor false"))
+        elif arg.startswith("file="):
+            args["file"] = str(arg.split("=")[1])
     logging.debug("Generating names")
     # use our function to generate 100 names into the variable usernames
-    usernames = generate(nameamt, True)
+    usernames = generate(count=args["amt"])
     logging.debug("Opening file")
     # open the list of names. + means to create the file if it doesn't exist
-    file = open("names.txt", "w+")
+    file = open(args["file"], "w+")
 
     usernames2 = list()  # create new list named usernames2
     for item in usernames:

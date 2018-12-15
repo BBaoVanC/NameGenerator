@@ -15,13 +15,43 @@ Robust name generator that generates awesome names!
 
 ### Features:
   * Easy to use
+  * Useful command-line arguments
   * Can be imported as a module
   * Only one function when imported as a module
   * Can be run directly as a standalone program
   * Always tested before release
 
 ---
-### Examples:
+### Command-Line Examples:
+
+
+Use defaults (100 names, debug disabled, write names to names.txt):
+```
+python namegen.py
+```
+Generate 250 names:
+```
+python namegen.py amt=250
+```
+Generate default amount of names with debug enabled:
+```
+python namegen.py debug=True
+```
+Generate names and place in file usernames.txt:
+```
+python namegen.py file=usernames.txt
+```
+Generate names and place in file users.txt inside the directory "example-names" **(Directory must already exist!)**
+```
+python namegen.py file=example-names/users.txt
+```
+Generate 50 names with debug enabled and place in namelist.txt:
+```
+python namegen.py amt=50 debug=True file=namelist.txt
+```
+
+---
+### API Examples:
 
 
 Use defaults (one name and debug disabled):
@@ -44,4 +74,4 @@ for name in names:
 ```
 ---
 ### License
-This is licensed under the MIT license. For more information, please refer to [`LICENSE.txt`](https://github.com/BBaoVanC/NameGenerator/blob/master/LICENSE.txt)
+_NameGenerator_ is licensed under the MIT license. For more information, please refer to [`LICENSE.txt`](https://github.com/BBaoVanC/NameGenerator/blob/master/LICENSE.txt)
