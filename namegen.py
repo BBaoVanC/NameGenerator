@@ -28,8 +28,9 @@ if __name__ == '__main__':  # if the program wasn't run as an import
     args = {"amt": 100,
             "debug": False,
             "file": "names.txt",
-            "method": "classic"
+            "method": "WILL BE SELECTED"
             }  # set default arguments
+    msel = False  # saves if the method has been selected
     for arg in cmdline:  # this block converts 'cmdline' to dictionary 'args'
         if arg.startswith("amt="):  # if the selected argument is 'amt'
             args["amt"] = int(arg.split("=")[1])  # save the selected amount
@@ -49,6 +50,7 @@ if __name__ == '__main__':  # if the program wasn't run as an import
             args["file"] = str(arg.split("=")[1])  # save this in argument list
 
         elif arg.startswith("method="):  # if the selected argument is 'method'
+            msel = True
             b = arg.split("=")[1].lower()  # convert argument to lowercase
             if b == "classic":  # if method is 'classic'
                 from generators import classic
@@ -62,6 +64,9 @@ if __name__ == '__main__':  # if the program wasn't run as an import
             else:
                 raise(ArgError("Arg for 'method' is invalid"))
 
+    if not msel:
+        from generators import classic
+        args["method"] = classic
     logging.debug("Generating names")
     # use our function to generate names into the variable 'usernames'
     usernames = args["method"].gen(count=args["amt"], debug=args["debug"])
