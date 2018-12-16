@@ -25,6 +25,7 @@ Robust name generator that generates awesome names!
 ### Command-Line Examples:
 
 
+To use the command-line or double-click launch, you must have namegen.py and the generators folder.
 Use defaults (100 names, debug disabled, write names to names.txt):
 ```
 python namegen.py
@@ -49,26 +50,37 @@ Generate 50 names with debug enabled and place in namelist.txt:
 ```
 python namegen.py amt=50 debug=True file=namelist.txt
 ```
+The default name generation method is classic, and looks like 'TheAssignmentanatorifier_90'.
+
+The generation method v2 looks like 'Misreadinq'.
+
+You can change the generation method used by using the argument 'method=[method]' and replace [method] with the correct method.
+```
+python namegen.py method=classic
+```
+Double-clicking namegen.py will generate 100 names with debug disabled and the classic method into names.txt.
 
 ---
 ### API Examples:
 
 
-Use defaults (one name and debug disabled):
-```python
-import namegen
+To use the API, you only need the generators folder.
 
-# this uses the defaults which are one name and debug disabled
-print(namegen.generate())
-```
-Prompt the user for the amount of names and enable debug:
+Generate classic name:
 ```python
-import namegen
+from generators import classic
+
+# this uses the defaults which are one name, debug disabled, and class
+print(classic.gen())
+```
+Prompt the user for the amount of names, enable debug, and generate v2 names:
+```python
+from generators import v2
 
 amt = input("Amount of names to generate >> ")
 count = int(amt)
 
-names = namegen.generate(count, true)
+names = v2.gen(count, true)
 for name in names:
   print(name)
 ```
