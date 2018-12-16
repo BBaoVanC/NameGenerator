@@ -42,6 +42,7 @@ def gen(count=1, debug=False):  # you may add more arguments after debug
     while count >= n:
         name = "generated_name"  # this should generate a name and save it in
         # a variable named 'name'
+        logging.debug("Generated name: " + name)
         names.append(name)
         n = n + 1
 

@@ -41,6 +41,7 @@ def gen(count=1, debug=False):
         if random.choice([True, False]):
             name1 = name1.capitalize()
         name = name1[0:-1] + "q"  # change the last letter to 'q'
+        logging.debug("Generated name: " + name)
         names.append(name)  # add name to list
         n = n + 1  # increases our loop counter
 
