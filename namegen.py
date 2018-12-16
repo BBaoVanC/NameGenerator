@@ -80,7 +80,7 @@ for item in usernames:
 usernames2[-1] = usernames2[-1].strip()  # remove newline from last item
 for item in usernames2:
     file.write(item)  # write each username to the file
-    logging.debug("Writing name: " + item)
+    logging.debug("Writing name: " + item.strip("\n"))
 logging.debug("Saving file")
 file.close()  # close the file and apply our changes
 logging.debug("Finished!")
