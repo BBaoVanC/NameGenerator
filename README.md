@@ -19,6 +19,7 @@ Robust name generator that generates awesome names!
   * Can be imported as a module
   * Only one function when imported as a module
   * Can be run directly as a standalone program
+  * Three types of names to generate
   * Always tested before release
 
 ---
@@ -54,6 +55,8 @@ The default name generation method is classic, and looks like 'TheAssignmentanat
 
 The generation method v2 looks like 'Misreadinq'.
 
+The generation method random looks like 'XaYyaknkCoH8'.
+
 You can change the generation method used by using the argument 'method=[method]' and replace [method] with the correct method.
 ```
 python namegen.py method=classic
@@ -84,6 +87,19 @@ names = v2.gen(count, true)
 for name in names:
   print(name)
 ```
+Generate one name using the random method:
+```python
+from generators import random
+
+print(random.gen())
+```
+Generate one name using the random method 15 characters long:
+```python
+from generators import random
+
+print(random.gen(length=15))
+```
+
 ---
 ### License
 _NameGenerator_ is licensed under the MIT license. For more information, please refer to [`LICENSE.txt`](https://github.com/BBaoVanC/NameGenerator/blob/master/LICENSE.txt)

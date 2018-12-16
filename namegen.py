@@ -33,6 +33,7 @@ if __name__ == '__main__':  # if the program wasn't run as an import
     for arg in cmdline:  # this block converts 'cmdline' to dictionary 'args'
         if arg.startswith("amt="):  # if the selected argument is 'amt'
             args["amt"] = int(arg.split("=")[1])  # save the selected amount
+
         elif arg.startswith("debug="):  # if the selected argument is 'debug'
             b = arg.split("=")[1].capitalize()  # capitalize the argument
             if b == "True":  # if the argument is true
@@ -43,8 +44,10 @@ if __name__ == '__main__':  # if the program wasn't run as an import
                 args["debug"] = False  # save this in argument list
             else:  # if argument is neither True nor False
                 raise(ArgError("Arg for 'debug' was neither True nor false"))
+
         elif arg.startswith("file="):  # if the selected argument is 'file'
             args["file"] = str(arg.split("=")[1])  # save this in argument list
+
         elif arg.startswith("method="):  # if the selected argument is 'method'
             b = arg.split("=")[1].lower()  # convert argument to lowercase
             if b == "classic":  # if method is 'classic'
@@ -53,8 +56,12 @@ if __name__ == '__main__':  # if the program wasn't run as an import
             elif b == "v2":  # if method is 'v2'
                 from generators import v2
                 args["method"] = v2  # save this in argument list
+            elif b == "random":
+                from generators import random  # if method is the random gen
+                args["method"] = random  # save this in argument list
             else:
                 raise(ArgError("Arg for 'method' is invalid"))
+
     logging.debug("Generating names")
     # use our function to generate names into the variable 'usernames'
     usernames = args["method"].gen(count=args["amt"], debug=args["debug"])
