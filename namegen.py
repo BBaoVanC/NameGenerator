@@ -3,14 +3,7 @@ Random Username Generator
 
 by BBaoVanC
 
-Generates a file with 100 different usernames for you to choose from. If you
-would like to use the random name generator in your program, put this program
-in the same folder as your program, use the import "namegen" (case sensitive),
-then use namegen.generate(count).
-
-namegen.generate(count) returns a list of names, so you should probably save
-the returned value to a variable.
-
+Documentation is located at:
 https://github.com/BBaoVanC/NameGenerator
 """
 
