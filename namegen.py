@@ -15,6 +15,7 @@ import sys
 class ArgError(Exception):
     pass
 
+
 cmdline = sys.argv[1:]  # save arguments in varible 'cmdline'
 args = {"amt": 100,
         "debug": False,
