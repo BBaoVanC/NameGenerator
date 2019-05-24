@@ -26,10 +26,15 @@ Robust name generator that generates awesome names!
 ### Command-Line Examples:
 
 
-To use the command-line or double-click launch, you must have namegen.py and the generators folder.
+To use the command-line or double-click launch, you must have namegen.py and the generators folder. If you only use specific generators, you don't need to download the other unused ones.
+
 Use defaults (100 names, debug disabled, write names to names.txt):
 ```
 python namegen.py
+```
+Show help menu (use any of the three options in brackets):
+```
+python namegen.py [--help | -h | help]
 ```
 Generate 250 names:
 ```
