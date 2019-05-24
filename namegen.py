@@ -71,7 +71,7 @@ for arg in cmdline:  # this block converts 'cmdline' to dictionary 'args'
         else:
             raise(ArgError("Arg for 'method' is invalid"))
 
-if gennames == True:
+if gennames is True:
     if not msel:
         from generators import classic
         args["method"] = classic
