@@ -4,10 +4,11 @@ matrix:
     - name: "Python 3.7.X on Xenial Linux"
       python: 3.7
       dist: xenial  # required for Python 3.7 and higher
-    - name: "Python 3.7.X on macOS"
-      os: osx
-      osx_image: xcode10.2
-      language: shell
+      before-install: sudo apt update
+    # - name: "Python 3.7.X on macOS"
+    #   os: osx
+    #   osx_image: xcode10.2
+    #   language: shell
     - name: "Python 3.7.X on Windows"
       os: windows
       language: shell
