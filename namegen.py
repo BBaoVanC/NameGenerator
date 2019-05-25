@@ -94,7 +94,7 @@ if gennames is True:
     file = open(args["file"], "w+")
 
     wtotal = len(usernames2)
-    for iter, item in enumerate(usernames2):
+    for indx, item in enumerate(usernames2):
         file.write(item)  # write each username to the file
         if args["debug"]:
             print("Writing name: ({}/{})".format(iter+1, wtotal), end="\r")
