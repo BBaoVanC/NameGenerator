@@ -1,5 +1,17 @@
 language: python
-python:
-  - "3.6"
-install: true
+matrix:
+  include:
+    - name: "Python 3.7.X on Xenial Linux"
+      python: 3.7
+      dist: xenial  # required for Python 3.7 and higher
+    - name: "Python 3.7.X on macOS"
+      os: osx
+      osx_image: xcode10.2
+      language: shell
+    - name: "Python 3.7.X on Windows"
+      os: windows
+      language: shell
+      before_install: choco install python
+      env: PATH=/c/Python37:/c/Python37/Scripts:$PATH
+install: pip3 install --upgrade pip
 script: bash ./travis.sh
