@@ -12,7 +12,8 @@ https://github.com/BBaoVanC/NameGenerator
 import sys
 
 
-class ArgError(Exception):
+class ArgError(Exception):  # custom error for invalid arguments
+    """This error occurs when an argument passed to the program is invalid."""
     pass
 
 
@@ -24,19 +25,21 @@ Options:
     method: Which name generation method to use
 Example:
     python namegen.py amt=50 debug=True file=mynames.txt method=classic"""
+# ^^^ this is the help menu text ^^^ #
+
 cmdline = sys.argv[1:]  # save arguments in varible 'cmdline'
-args = {"amt": 100,
-        "debug": False,
-        "file": "names.txt",
-        "method": "WILL BE SELECTED"
-        }  # set default arguments
+args = {"amt": 100,  # default amount of names to generate
+        "debug": False,  # disable debug by default
+        "file": "names.txt",  # default file name
+        "method": "WILL BE SELECTED"  # don't select the method yet
+        }  # default arguments
 msel = False  # saves if the method has been selected
 gennames = True  # saves if names should be generated
 for arg in cmdline:  # this block converts 'cmdline' to dictionary 'args'
-    if arg in ["--help", "-h", "help"]:
-        print(helptxt)
-        gennames = False
-        args = {}
+    if arg in ["--help", "-h", "help"]:  # if one of the help options is used
+        print(helptxt)  # print the help menu text
+        gennames = False  # don't generate names
+        break  # break out of the loop to prevent other args from being checked
 
     elif arg.startswith("amt="):  # if the selected argument is 'amt'
         args["amt"] = int(arg.split("=")[1])  # save the selected amount
@@ -54,53 +57,57 @@ for arg in cmdline:  # this block converts 'cmdline' to dictionary 'args'
         args["file"] = str(arg.split("=")[1])  # save this in argument list
 
     elif arg.startswith("method="):  # if the selected argument is 'method'
-        msel = True
+        msel = True  # note that the method has been selected
         b = arg.split("=")[1].lower()  # convert argument to lowercase
         if b == "classic":  # if method is 'classic'
-            from generators import classic
+            from generators import classic  # import the classic method
             args["method"] = classic  # save this in argument list
         elif b == "v2":  # if method is 'v2'
-            from generators import v2
+            from generators import v2  # import the v2 method
             args["method"] = v2  # save this in argument list
-        elif b == "random":
+        elif b == "random":  # if method is 'random'
             from generators import random  # if method is the random gen
             args["method"] = random  # save this in argument list
-        else:
+        else:  # if none of the existing methods was selected
             raise(ArgError("Arg for 'method' is invalid"))
 
-if gennames is True:
-    if not msel:
-        from generators import classic
-        args["method"] = classic
-    if args["debug"]:
-        print("Generating names...")
+if gennames is True:  # if we should generate the names
+    if not msel:  # if the method hasn't been selected
+        from generators import classic  # import the classic method
+        args["method"] = classic  # save the method in argument list
+    if args["debug"]:  # if we should output debug information
+        print("Generating names...")  # log message
     # use our function to generate names into the variable 'usernames'
     usernames = args["method"].gen(count=args["amt"], debug=args["debug"])
+    # ^^^ generate the names with the selected method and options ^^^ #
 
-    if args["debug"]:
-        print("Preparing list to write to file", end="\r")
+    if args["debug"]:  # if we should output debug information
+        print("Preparing list to write to file", end="\r")  # log message
+
+    # vvv prepare a list for writing directly to the file vvv #
     usernames2 = list()  # create new list named usernames2
-    for item in usernames:
+    for item in usernames:  # for each item in the username list
         # add newline character to each item in the usernames2 list...
-        item = item + "\n"
+        item = item + "\n"  # add a newline to the end of each name
         usernames2.append(item)  # ...
     usernames2[-1] = usernames2[-1].strip()  # remove newline from last item
-    if args["debug"]:
-        print("Preparing list to write to file...")
+    if args["debug"]:  # if we should output debug information
+        print("Preparing list to write to file...")  # log message
 
-    if args["debug"]:
+    # vvv start making file vvv #
         print("Opening file...")
     # open the list of names. + means to create the file if it doesn't exist
-    file = open(args["file"], "w+")
+    file = open(args["file"], "w+")  # open the file in overwrite mode (w+)
 
-    wtotal = len(usernames2)
-    for indx, item in enumerate(usernames2):
+    wtotal = len(usernames2)  # save the total names in wtotal for progress log
+    for indx, item in enumerate(usernames2):  # indx is the index
         file.write(item)  # write each username to the file
-        if args["debug"]:
+        if args["debug"]:  # if we should output debug information
             print("Writing name: ({}/{})".format(indx+1, wtotal), end="\r")
-    if args["debug"]:
-        print("Writing name: ({}/{})...done".format(indx+1, wtotal))
-        print("Saving file...")
+            # ^^^ log message ^^^ #
+    if args["debug"]:  # if we should output debug information
+        print("Writing name: ({}/{})...done".format(indx+1, wtotal))  # log msg
+        print("Saving file...")  # log message
     file.close()  # close the file and apply our changes
-    if args["debug"]:
-        print("Finished!")
+    if args["debug"]:  # if we should output debug information
+        print("Finished!")  # log message

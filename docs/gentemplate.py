@@ -30,18 +30,18 @@ def gen(count=1, debug=False):  # you may add more arguments after debug
     words = [x.strip() for x in words]  # remove newlines, now each line in
     # your file is an item in the list 'words'
 
-    names = list()
-    n = 1
+    names = list()  # prepare the name list
+    n = 1  # prepare loop counter
 
     while count >= n:
         name = "generated_name"  # this should generate a name and save it in
         # a variable named 'name'
-        if debug:
+        if debug:  # if we should output debug information
             print("Generated name: ({}/{})".format(n-1, count),
                   end="\r")  # log message for generated names
-        names.append(name)
-        n = n + 1
+        names.append(name)  # add name to list
+        n = n + 1  # increase counter
 
-    if debug:
-        print("Generated name: ({}/{})...done".format(n-1, count))
-    return names
+    if debug:  # if we should output debug information
+        print("Generated name: ({}/{})...done".format(n-1, count))  # log msg
+    return names  # return the names list
