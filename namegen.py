@@ -97,9 +97,9 @@ if gennames is True:
     for indx, item in enumerate(usernames2):
         file.write(item)  # write each username to the file
         if args["debug"]:
-            print("Writing name: ({}/{})".format(iter+1, wtotal), end="\r")
+            print("Writing name: ({}/{})".format(indx+1, wtotal), end="\r")
     if args["debug"]:
-        print("Writing name: ({}/{})...done".format(iter+1, wtotal))
+        print("Writing name: ({}/{})...done".format(indx+1, wtotal))
         print("Saving file...")
     file.close()  # close the file and apply our changes
     if args["debug"]:
