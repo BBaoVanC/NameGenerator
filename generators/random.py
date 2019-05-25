@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 Random Generator
 
@@ -13,18 +14,10 @@ Examples:
 
 # Imports
 import random
-import logging
-
-logging.basicConfig(level=logging.INFO)
 
 
 # Generation method
 def gen(count=1, debug=False, length=12):
-    if debug:
-        logging.basicConfig(level=logging.DEBUG)
-    else:
-        logging.basicConfig(level=logging.INFO)
-
     names = list()
     n = 1
 
@@ -40,8 +33,12 @@ def gen(count=1, debug=False, length=12):
             if cap:
                 char = char.capitalize()
             name = name + str(char)
-        logging.debug("Generated name: " + name)
+        if debug:
+            print("Generated name: ({}/{})".format(n-1, count),
+                  end="\r")  # log message for generated names
         names.append(name)
         n = n + 1
 
+    if debug:
+        print("Generated name: ({}/{})...done".format(n-1, count))
     return names

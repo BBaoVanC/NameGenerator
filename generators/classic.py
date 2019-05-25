@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 Classic Generator
 
@@ -14,28 +15,20 @@ Examples:
 # Imports
 import os
 import random
-import logging
 
-logging.basicConfig(level=logging.INFO)
 # if the list doesn't exist
 if not os.path.isfile("generators/desiquintans.com_nounlist.txt"):
-    logging.critical("desiquintans.com_nounlist.txt could not be found!")
+    print("ERROR: desiquintans.com_nounlist.txt could not be found!")
 
 
 # Generation method
 def gen(count=1, debug=False):
-    if debug:
-        logging.basicConfig(level=logging.DEBUG)
-    else:
-        logging.basicConfig(level=logging.INFO)
-
     with open("generators/desiquintans.com_nounlist.txt") as f:
         words = f.readlines()  # read all lines into a list
     words = [x.strip() for x in words]  # remove the "\n" from each word
     wsuffixes = ["ator", "man", "guy", "ifier", "anator", ""]  # suffixes
     wprefixes = ["Mr", "The", ""]  # prefixes
     names = list()  # initialize the names list variable
-
     # vowels = ['a', 'e', 'i', 'o', 'u']
     # vowels2 = ['a', 'e', 'i', 'o', 'u', 'y']
     vowels3 = ['a', 'i', 'o', 'u', 'y']
@@ -71,8 +64,12 @@ def gen(count=1, debug=False):
         number = random.randint(0, 999)
         # puts together the different parts of the username
         name = str(word) + str(space) + str(number)
-        logging.debug("Generated name: " + name)
+        if debug:
+            print("Generated name: ({}/{})".format(n-1, count),
+                  end="\r")  # log message for generated names
         names.append(name)  # add name to list of generated names
         n = n + 1  # increases our loop counter
 
+    if debug:
+        print("Generated name: ({}/{})...done".format(n-1, count))
     return names  # return the generated names

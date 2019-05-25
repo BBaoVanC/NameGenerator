@@ -14,21 +14,14 @@ Examples:
 # Imports
 import os
 import random
-import logging
 
-logging.basicConfig(level=logging.INFO)
 # if the list doesn't exist
 if not os.path.isfile("generators/ing_nounlist.txt"):
-    logging.critical("ing_nounlist.txt could not be found!")
+    print("ERROR: ing_nounlist.txt could not be found!")
 
 
 # Generation method
 def gen(count=1, debug=False):
-    if debug:
-        logging.basicConfig(level=logging.DEBUG)
-    else:
-        logging.basicConfig(level=logging.INFO)
-
     with open("generators/ing_nounlist.txt") as f:  # open the word list file
         words = f.readlines()
     words = [x.strip() for x in words]  # remove the "\n" from each word
@@ -41,8 +34,12 @@ def gen(count=1, debug=False):
         if random.choice([True, False]):
             name1 = name1.capitalize()
         name = name1[0:-1] + "q"  # change the last letter to 'q'
-        logging.debug("Generated name: " + name)
+        if debug:
+            print("Generated name: ({}/{})".format(n-1, count),
+                  end="\r")  # log message for generated names
         names.append(name)  # add name to list
         n = n + 1  # increases our loop counter
 
+    if debug:
+        print("Generated name: ({}/{})...done".format(n-1, count))
     return names

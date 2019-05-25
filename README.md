@@ -21,12 +21,15 @@ Robust name generator that generates awesome names!
   * Can be run directly as a standalone program
   * Three types of names to generate
   * Always tested before release
+  * Uses Python 3
 
 ---
 ### Command-Line Examples:
 
 
 To use the command-line or double-click launch, you must have namegen.py and the generators folder. If you only use specific generators, you don't need to download the other unused ones.
+
+Please note that this program is written for Python 3. It might work in Python 2, but there is no guarantee. If you have both Python 2 and 3 installed, use the command `python3` instead of `python`
 
 Use defaults (100 names, debug disabled, write names to names.txt):
 ```

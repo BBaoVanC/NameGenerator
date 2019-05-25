@@ -9,7 +9,6 @@ https://github.com/BBaoVanC/NameGenerator
 """
 
 # Imports
-import logging
 import sys
 
 
@@ -45,10 +44,8 @@ for arg in cmdline:  # this block converts 'cmdline' to dictionary 'args'
     elif arg.startswith("debug="):  # if the selected argument is 'debug'
         b = arg.split("=")[1].capitalize()  # capitalize the argument
         if b == "True":  # if the argument is true
-            logging.basicConfig(level=logging.DEBUG)  # enable debug mode
             args["debug"] = True  # save this in argument list
         elif b == "False":  # if the argument is false
-            logging.basicConfig(level=logging.INFO)  # disable debug mode
             args["debug"] = False  # save this in argument list
         else:  # if argument is neither True nor False
             raise(ArgError("Arg for 'debug' was neither True nor false"))
@@ -75,22 +72,35 @@ if gennames is True:
     if not msel:
         from generators import classic
         args["method"] = classic
-    logging.debug("Generating names")
+    if args["debug"]:
+        print("Generating names...")
     # use our function to generate names into the variable 'usernames'
     usernames = args["method"].gen(count=args["amt"], debug=args["debug"])
-    logging.debug("Opening file")
-    # open the list of names. + means to create the file if it doesn't exist
-    file = open(args["file"], "w+")
 
+    if args["debug"]:
+        print("Preparing list to write to file", end="\r")
     usernames2 = list()  # create new list named usernames2
     for item in usernames:
         # add newline character to each item in the usernames2 list...
         item = item + "\n"
         usernames2.append(item)  # ...
     usernames2[-1] = usernames2[-1].strip()  # remove newline from last item
-    for item in usernames2:
+    if args["debug"]:
+        print("Preparing list to write to file...")
+
+    if args["debug"]:
+        print("Opening file...")
+    # open the list of names. + means to create the file if it doesn't exist
+    file = open(args["file"], "w+")
+
+    wtotal = len(usernames2)
+    for iter, item in enumerate(usernames2):
         file.write(item)  # write each username to the file
-        logging.debug("Writing name: " + item.strip("\n"))
-    logging.debug("Saving file")
+        if args["debug"]:
+            print("Writing name: ({}/{})".format(iter+1, wtotal), end="\r")
+    if args["debug"]:
+        print("Writing name: ({}/{})...done".format(iter+1, wtotal))
+        print("Saving file...")
     file.close()  # close the file and apply our changes
-    logging.debug("Finished!")
+    if args["debug"]:
+        print("Finished!")

@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 [methodname] Generator
 
@@ -14,22 +15,15 @@ Examples:
 # Place your imports here.
 import os  # this is only necessary if you use this module, or if you require a
 # file as seen below.
-import logging
 
-logging.basicConfig(level=logging.INFO)
 # the following two lines of code are not required since they are only for
 # requiring a file.
 if not os.path.isfile("generators/[requiredfile]"):
-    logging.critical("[requiredfile] could not be found!")
+    print("ERROR: [requiredfile] could not be found!")
 
 
 # Generation method
 def gen(count=1, debug=False):  # you may add more arguments after debug
-    if debug:
-        logging.basicConfig(level=logging.DEBUG)
-    else:
-        logging.basicConfig(level=logging.INFO)
-
     with open("generators/[requiredfile]") as f:  # use this block to read all
         # the data in your file
         words = f.readlines()  # read the file
@@ -42,8 +36,12 @@ def gen(count=1, debug=False):  # you may add more arguments after debug
     while count >= n:
         name = "generated_name"  # this should generate a name and save it in
         # a variable named 'name'
-        logging.debug("Generated name: " + name)
+        if debug:
+            print("Generated name: ({}/{})".format(n-1, count),
+                  end="\r")  # log message for generated names
         names.append(name)
         n = n + 1
 
+    if debug:
+        print("Generated name: ({}/{})...done".format(n-1, count))
     return names
