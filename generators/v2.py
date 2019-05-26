@@ -23,6 +23,7 @@ if not os.path.isfile("generators/ing_nounlist.txt"):
 
 # Generation method
 def gen(count=1, debug=False):
+    """Generate names using the v2 method."""
     with open("generators/ing_nounlist.txt") as f:  # open the word list file
         words = f.readlines()  # read the file
     words = [x.strip() for x in words]  # remove the "\n" from each word

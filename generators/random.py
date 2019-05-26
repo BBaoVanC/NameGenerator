@@ -18,6 +18,7 @@ import random
 
 # Generation method
 def gen(count=1, debug=False, length=12):
+    """Generate names using the random method."""
     names = list()  # prepare blank names list
     n = 1  # prepare loop counter
 
