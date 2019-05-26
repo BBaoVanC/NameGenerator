@@ -5,14 +5,14 @@ matrix:
       python: 3.7
       dist: xenial  # required for Python 3.7 and higher
       before-install: sudo apt update
-    - name: "Python 3.7.X on macOS"
-      os: osx
-      osx_image: xcode10.2
-      language: shell
+    # - name: "Python 3.7.X on macOS"
+    #   os: osx
+    #   osx_image: xcode10.2
+    #   language: shell
     - name: "Python 3.7.X on Windows"
       os: windows
       language: shell
       before_install: choco install python
       env: PATH=/c/Python37:/c/Python37/Scripts:$PATH
-install: true
+# install: true
 script: bash ./travis.sh
