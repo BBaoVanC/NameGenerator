@@ -105,10 +105,10 @@ if gennames is True:  # if we should generate the names
     for indx, item in enumerate(usernames2):  # indx is the index
         file.write(item)  # write each username to the file
         if args["debug"]:  # if we should output debug information
-            print(lib.progress.genbar(progress=indx+1, max=wtotal), end="\r")
+            print(lib.progress.genbar(curprg=indx+1, maxprg=wtotal), end="\r")
             # ^^^ log message ^^^ #
     if args["debug"]:  # if we should output debug information
-        print(lib.progress.genbar(progress=indx+1, max=wtotal) + "...done")
+        print(lib.progress.genbar(curprg=indx+1, maxprg=wtotal) + "...done")
         print("Saving file...")  # log message
     file.close()  # close the file and apply our changes
     if args["debug"]:  # if we should output debug information

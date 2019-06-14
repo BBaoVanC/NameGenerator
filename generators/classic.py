@@ -68,10 +68,10 @@ def gen(count=1, debug=False):
         # puts together the different parts of the username
         name = str(word) + str(space) + str(number)
         if debug:  # if we should output debug information
-            print(lib.progress.genbar(progress=n-1, max=count), end="\r")
+            print(lib.progress.genbar(curprg=n-1, maxprg=count), end="\r")
         names.append(name)  # add name to list of generated names
         n = n + 1  # increases our loop counter
 
     if debug:  # if we should output debug information
-        print(lib.progress.genbar(progress=n-1, max=count) + "...done")
+        print(lib.progress.genbar(curprg=n-1, maxprg=count) + "...done")
     return names  # return the generated names

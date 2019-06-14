@@ -36,10 +36,10 @@ def gen(count=1, debug=False, length=12):
                 char = char.capitalize()  # capitalize the letter
             name = name + str(char)  # add the character to the name
         if debug:  # if we should output debug information
-            print(lib.progress.genbar(progress=n-1, max=count), end="\r")
+            print(lib.progress.genbar(curprg=n-1, maxprg=count), end="\r")
         names.append(name)  # add the name to the name list
         n = n + 1  # increase counter
 
     if debug:  # if we should output debug information
-        print(lib.progress.genbar(progress=n-1, max=count) + "...done")
+        print(lib.progress.genbar(curprg=n-1, maxprg=count) + "...done")
     return names  # return the name list
