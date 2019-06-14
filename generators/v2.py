@@ -15,6 +15,7 @@ Examples:
 # Imports
 import os
 import random
+import lib.progress
 
 # require file
 if not os.path.isfile("generators/ing_nounlist.txt"):
@@ -37,11 +38,10 @@ def gen(count=1, debug=False):
             name1 = name1.capitalize()  # capitalize the name
         name = name1[0:-1] + "q"  # change the last letter to 'q'
         if debug:  # if we should output debug information
-            print("Generated name: ({}/{})".format(n-1, count),
-                  end="\r")  # log message for generated names
+            print(lib.progress.genbar(progress=n-1, max=count), end="\r")
         names.append(name)  # add name to list
         n = n + 1  # increases our loop counter
 
     if debug:  # if we should output debug information
-        print("Generated name: ({}/{})...done".format(n-1, count))  # log msg
+        print(lib.progress.genbar(progress=n-1, max=count) + "...done")
     return names  # return the name list

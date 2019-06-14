@@ -14,6 +14,7 @@ Examples:
 
 # Imports
 import random
+import lib.progress
 
 
 # Generation method
@@ -35,11 +36,10 @@ def gen(count=1, debug=False, length=12):
                 char = char.capitalize()  # capitalize the letter
             name = name + str(char)  # add the character to the name
         if debug:  # if we should output debug information
-            print("Generated name: ({}/{})".format(n-1, count),
-                  end="\r")  # log message for generated names
+            print(lib.progress.genbar(progress=n-1, max=count), end="\r")
         names.append(name)  # add the name to the name list
         n = n + 1  # increase counter
 
     if debug:  # if we should output debug information
-        print("Generated name: ({}/{})...done".format(n-1, count))  # log msg
+        print(lib.progress.genbar(progress=n-1, max=count) + "...done")
     return names  # return the name list

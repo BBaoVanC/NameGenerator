@@ -10,6 +10,7 @@ https://github.com/BBaoVanC/NameGenerator
 
 # Imports
 import sys
+import lib.progress
 
 
 class ArgError(Exception):  # custom error for invalid arguments
@@ -92,7 +93,7 @@ if gennames is True:  # if we should generate the names
         usernames2.append(item)  # ...
     usernames2[-1] = usernames2[-1].strip()  # remove newline from last item
     if args["debug"]:  # if we should output debug information
-        print("Preparing list to write to file...")  # log message
+        print("Preparing list to write to file...done")  # log message
 
     # vvv start making file vvv #
         print("Opening file...")
@@ -100,13 +101,14 @@ if gennames is True:  # if we should generate the names
     file = open(args["file"], "w+")  # open the file in overwrite mode (w+)
 
     wtotal = len(usernames2)  # save the total names in wtotal for progress log
+    print("Writing names...")
     for indx, item in enumerate(usernames2):  # indx is the index
         file.write(item)  # write each username to the file
         if args["debug"]:  # if we should output debug information
-            print("Writing name: ({}/{})".format(indx+1, wtotal), end="\r")
+            print(lib.progress.genbar(progress=indx+1, max=wtotal), end="\r")
             # ^^^ log message ^^^ #
     if args["debug"]:  # if we should output debug information
-        print("Writing name: ({}/{})...done".format(indx+1, wtotal))  # log msg
+        print(lib.progress.genbar(progress=indx+1, max=wtotal) + "...done")
         print("Saving file...")  # log message
     file.close()  # close the file and apply our changes
     if args["debug"]:  # if we should output debug information

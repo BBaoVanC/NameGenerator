@@ -15,6 +15,7 @@ Examples:
 # Imports
 import os
 import random
+import lib.progress
 
 # following block is for a file requirement
 if not os.path.isfile("generators/desiquintans.com_nounlist.txt"):
@@ -67,11 +68,10 @@ def gen(count=1, debug=False):
         # puts together the different parts of the username
         name = str(word) + str(space) + str(number)
         if debug:  # if we should output debug information
-            print("Generated name: ({}/{})".format(n-1, count),
-                  end="\r")  # log message for generated names
+            print(lib.progress.genbar(progress=n-1, max=count), end="\r")
         names.append(name)  # add name to list of generated names
         n = n + 1  # increases our loop counter
 
     if debug:  # if we should output debug information
-        print("Generated name: ({}/{})...done".format(n-1, count))  # log msg
+        print(lib.progress.genbar(progress=n-1, max=count) + "...done")
     return names  # return the generated names
