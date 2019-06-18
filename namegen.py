@@ -30,7 +30,7 @@ Example:
 
 cmdline = sys.argv[1:]  # save arguments in varible 'cmdline'
 args = {"amt": 100,  # default amount of names to generate
-        "debug": False,  # disable debug by default
+        "debug": True,  # enable debug by default
         "file": "names.txt",  # default file name
         "method": "WILL BE SELECTED"  # don't select the method yet
         }  # default arguments
