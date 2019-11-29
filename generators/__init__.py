@@ -12,4 +12,3 @@ https://github.com/BBaoVanC/NameGenerator
 # Imports
 import generators.classic
 import generators.random
-import generators.v2

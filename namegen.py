@@ -63,9 +63,6 @@ for arg in cmdline:  # this block converts 'cmdline' to dictionary 'args'
         if b == "classic":  # if method is 'classic'
             from generators import classic  # import the classic method
             args["method"] = classic  # save this in argument list
-        elif b == "v2":  # if method is 'v2'
-            from generators import v2  # import the v2 method
-            args["method"] = v2  # save this in argument list
         elif b == "random":  # if method is 'random'
             from generators import random  # if method is the random gen
             args["method"] = random  # save this in argument list

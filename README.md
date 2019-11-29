@@ -62,8 +62,6 @@ python namegen.py amt=50 debug=True file=namelist.txt
 ```
 The default name generation method is classic, and looks like 'TheAssignmentanatorifier_90'.
 
-The generation method v2 looks like 'Misreadinq'.
-
 The generation method random looks like 'XaYyaknkCoH8'.
 
 You can change the generation method used by using the argument 'method=[method]' and replace [method] with the correct method.
@@ -85,14 +83,14 @@ from generators import classic
 # this uses the defaults which are one name, debug disabled, and class
 print(classic.gen())
 ```
-Prompt the user for the amount of names, enable debug, and generate v2 names:
+Prompt the user for the amount of names, enable debug, and generate classic names:
 ```python
-from generators import v2
+from generators import classic
 
 amt = input("Amount of names to generate >> ")
 count = int(amt)
 
-names = v2.gen(count, true)
+names = classic.gen(count, true)
 for name in names:
   print(name)
 ```
