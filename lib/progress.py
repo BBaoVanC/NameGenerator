@@ -4,6 +4,8 @@ lib/progress.py
 by BBaoVanC
 
 This library allows easy generation of progress bars.
+
+Copyright (C) 2019 BBaoVanC
 """
 
 

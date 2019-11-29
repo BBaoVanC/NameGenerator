@@ -6,6 +6,8 @@ by BBaoVanC
 
 Documentation is located at:
 https://github.com/BBaoVanC/NameGenerator
+
+Copyright (C) 2019 BBaoVanC
 """
 
 # Imports

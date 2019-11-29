@@ -10,6 +10,8 @@ Examples:
     TheAssignmentanatorifier_90
     Coinifier_313
     COMPONENTGUY290
+
+Copyright (C) 2019 BBaoVanC
 """
 
 # Imports
