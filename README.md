@@ -22,6 +22,7 @@ Robust name generator that generates awesome names!
   * Three types of names to generate
   * Always tested before release
   * Uses Python 3
+  * Supports latest 3 versions of Python
 
 ---
 ### Command-Line Examples:
