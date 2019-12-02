@@ -82,7 +82,7 @@ if gennames is True:  # if we should generate the names
     # ^^^ generate the names with the selected method and options ^^^ #
 
     if args["debug"]:  # if we should output debug information
-        print("Preparing list to write to file", end="\n")  # log message
+        print("Preparing list to write to file", end="\r")  # log message
 
     # vvv prepare a list for writing directly to the file vvv #
     usernames2 = list()  # create new list named usernames2
@@ -105,7 +105,7 @@ if gennames is True:  # if we should generate the names
     for indx, item in enumerate(usernames2):  # indx is the index
         file.write(item)  # write each username to the file
         if args["debug"]:  # if we should output debug information
-            print(lib.progress.genbar(curprg=indx+1, maxprg=wtotal), end="\n")
+            print(lib.progress.genbar(curprg=indx+1, maxprg=wtotal), end="\r")
             # ^^^ log message ^^^ #
     if args["debug"]:  # if we should output debug information
         print(lib.progress.genbar(curprg=indx+1, maxprg=wtotal) + "...done")
