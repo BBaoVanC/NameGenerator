@@ -36,7 +36,7 @@ def gen(count=1, debug=False):
     names = list()  # initialize the names list variable
     # vowels = ['a', 'e', 'i', 'o', 'u']
     # vowels2 = ['a', 'e', 'i', 'o', 'u', 'y']
-    vowels3 = ['a', 'i', 'o', 'u', 'y']  # custom vowel list
+    vowels3 = ['a', 'i', 'o', 'u']  # custom vowel list
     n = 1  # prepare loop counter
     while count >= n:  # name generation loop
         word_pre = random.choice(words)  # choose a random word
