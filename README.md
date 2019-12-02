@@ -108,5 +108,16 @@ print(random.gen(length=15))
 ```
 
 ---
+### Troubleshooting + Python 2
+If you get this error (or similar):
+```
+File "namegen.py", line 85
+  print("Preparing list to write to file", end="\r")  # log message
+                                              ^
+SyntaxError: invalid syntax
+```
+Check your Python version. NameGenerator doesn't work on Python 2. It's also only *tested* on the latest 3 versions of Python 3. It may work on earlier Python 3 versions, but there is no guarantee.
+
+---
 ### License
 _NameGenerator_ is licensed under the GPLv3 license. For more information, please refer to [`LICENSE.txt`](https://github.com/BBaoVanC/NameGenerator/blob/master/LICENSE.txt)
