@@ -2,7 +2,7 @@ If you would like to make a pull request to add a new name generation method, pl
 
 generators/[methodname].py
 ```python
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """
 [methodname] Generator
 
