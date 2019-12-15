@@ -13,8 +13,9 @@ Examples:
 """
 
 # Place your imports here.
-import os  # this is only necessary if you use this module, or if you require a
-# file as seen below.
+import os
+# ^^^ this is only necessary if you use this module, or if you require a
+#     file as seen below.
 
 # the following two lines of code are not required since they are only for
 # requiring a file.

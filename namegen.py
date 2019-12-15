@@ -100,7 +100,7 @@ if gennames is True:  # if we should generate the names
     file = open(args["file"], "w+")  # open the file in overwrite mode (w+)
 
     wtotal = len(usernames2)  # save the total names in wtotal for progress log
-    if args["debug"]:
+    if args["debug"]:  # if debug is enabled
         print("Writing names...")
     for indx, item in enumerate(usernames2):  # indx is the index
         file.write(item)  # write each username to the file
