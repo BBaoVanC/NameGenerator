@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Classic Generator
+Classic Generator.
 
 by BBaoVanC
 
@@ -39,17 +39,17 @@ def gen(count=1, debug=False):
     vowels3 = ['a', 'i', 'o', 'u']  # custom vowel list
     n = 1  # initialize loop counter
     while count >= n:  # name generation loop
-        word_pre = random.choice(words)  # choose a random word
+        word_pre = random.choice(words)  # nosec
         word_pre = word_pre.capitalize()  # capitalize the first letter
-        wprefix = random.choice(wprefixes)  # choose a random prefix
-        wsuffix = random.choice(wsuffixes)  # choose a random suffix
+        wprefix = random.choice(wprefixes)  # nosec | choose a random prefix
+        wsuffix = random.choice(wsuffixes)  # nosec | choose a random suffix
         wsuffix2 = wsuffix  # initialize wsuffix2 variable
         if wsuffix == "ator" or wsuffix == "anator":  # if the suffix is either
-            if random.choice([True, False, False]):  # 1/3 chance
+            if random.choice([True, False, False]):  # nosec | 1/3 chance
                 wsuffix2 = wsuffix + "ifier"  # add the extra suffix of "ifier"
 
         # if we should make the name all caps
-        caps = random.choice([True, False, False, False])  # 1/4 chance
+        caps = random.choice([True, False, False, False])  # nosec 1/4 chance
         if caps:  # if we are going to make it all caps
             wprefix = wprefix.upper()  # set the prefix to all caps
             word_pre = word_pre.upper()  # set the word to all caps
@@ -64,9 +64,9 @@ def gen(count=1, debug=False):
         # create a string 'word' which adds the 3 parts together
         word = str(wprefix) + str(word_pre) + str(wsuffix2)
         # choose if there should be an underscore before the number at the end
-        space = random.choice(["_", "", ""])
+        space = random.choice(["_", "", ""])  # nosec
         # choose a random number to have at the end
-        number = random.randint(0, 999)
+        number = random.randint(0, 999)  # nosec
         # puts together the different parts of the username
         name = str(word) + str(space) + str(number)
         if debug:  # if we should output debug information

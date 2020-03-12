@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-[methodname] Generator
+[methodname] Generator.
 
 by [your GitHub username or other identifier]
 
@@ -25,6 +25,7 @@ if not os.path.isfile("generators/[requiredfile]"):
 
 # Generation method
 def gen(count=1, debug=False):  # you may add more arguments after debug
+    """Generate names with the [methodname] method."""
     with open("generators/[requiredfile]") as f:  # use this block to read all
         # the data in your file
         words = f.readlines()  # read the file

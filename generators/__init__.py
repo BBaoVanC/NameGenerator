@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Name Generator Method Package
+Name Generator Method Package.
 
 by BBaoVanC
 
@@ -12,5 +12,5 @@ Copyright (C) 2019 BBaoVanC
 """
 
 # Imports
-import generators.classic
-import generators.random
+import generators.classic  # NOQA
+import generators.random  # NOQA

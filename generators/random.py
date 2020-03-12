@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Random Generator
+Random Generator.
 
 by BBaoVanC
 
@@ -32,8 +32,8 @@ def gen(count=1, debug=False, length=12):
                        "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v",
                        "w", "x", "y", "z", "_", "0", "1", "2", "3", "4", "5",
                        "6", "7", "8", "9"]  # character set
-            char = random.choice(charset)  # choose a random character
-            cap = random.choice([True, False])  # choose capitalization
+            char = random.choice(charset)  # nosec | choose a random character
+            cap = random.choice([True, False])  # nosec | choose capitalization
             if cap:  # if it should be capitalized
                 char = char.capitalize()  # capitalize the letter
             name = name + str(char)  # add the character to the name

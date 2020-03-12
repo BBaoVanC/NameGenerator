@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Random Username Generator
+Random Username Generator.
 
 by BBaoVanC
 
@@ -17,6 +17,7 @@ import lib.progress
 
 class ArgError(Exception):  # custom error for invalid arguments
     """This error occurs when an argument passed to the program is invalid."""
+
     pass
 
 
@@ -78,6 +79,7 @@ if gennames is True:  # if we should generate the names
     if args["debug"]:  # if we should output debug information
         print("Generating names...")  # log message
     # use our function to generate names into the variable 'usernames'
+    # pylint: disable=no-member
     usernames = args["method"].gen(count=args["amt"], debug=args["debug"])
     # ^^^ generate the names with the selected method and options ^^^ #
 
