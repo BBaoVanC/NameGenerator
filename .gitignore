@@ -1,6 +1,6 @@
 
-# Created by https://www.gitignore.io/api/macos
-# Edit at https://www.gitignore.io/?templates=macos
+# Created by https://www.gitignore.io/api/macos,visualstudiocode
+# Edit at https://www.gitignore.io/?templates=macos,visualstudiocode
 
 ### macOS ###
 # General
@@ -30,7 +30,14 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-# End of https://www.gitignore.io/api/macos
+### VisualStudioCode ###
+.vscode/*
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
 
-# bbaovanc's Custom Ignores
-__pycache__/
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
+
+# End of https://www.gitignore.io/api/macos,visualstudiocode
