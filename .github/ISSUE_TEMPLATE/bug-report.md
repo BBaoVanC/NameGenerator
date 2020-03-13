@@ -12,6 +12,7 @@ A clear and concise description of what the bug is.
 
 **To Reproduce**
 Steps to reproduce the behavior:
+
 1. Use argument '...'
 2. Edit file '...'
 3. See error
@@ -23,9 +24,10 @@ A clear and concise description of what you expected to happen.
 If applicable, add screenshots to help explain your problem.
 
 **Desktop (please complete the following information):**
- - Affected OS(s): [e.g. macOS 10.14, Windows 10 v1809]
- - Affected program version(s): [e.g. v2.1.1]
- - Affected Python version(s): [e.g. 3.7.1]
+
+- Affected OS(s): [e.g. macOS 10.14, Windows 10 v1809]
+- Affected program version(s): [e.g. v2.1.1]
+- Affected Python version(s): [e.g. 3.7.1]
 
 **Additional context**
 Add any other context about the problem here.

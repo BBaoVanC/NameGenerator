@@ -1,7 +1,10 @@
+# Pull Request Template
+
 If you would like to make a pull request to add a new name generation method, please use the template below. The only edits you need to make are creating a file in the generators folder for your generation method. If I accept your pull request, I will manually add command-line and double click support in namegen.py. Replace [methodname] with the name of your generation method. The following code block is the template, also stored in **docs/gentemplate.py**. If you are writing a new generation method, copy this template and edit it. Comments in the template are meant for explaining the template; they may be removed. Please try to document everything using comments.
 
 generators/[methodname].py
-```python
+
+``` python
 #!/usr/bin/env python3
 """
 [methodname] Generator
