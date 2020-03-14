@@ -1,7 +1,7 @@
 # NameGenerator
 
 [![AWESOMENESS](https://img.shields.io/badge/awesomeness-maximum-00a0af.svg)](https://www.youtube.com/channel/UCCiDxF_RZ4fTU_gGJRz-fwQ)
-[![Build Status](https://travis-ci.org/BBaoVanC/NameGenerator.svg?branch=master)](https://travis-ci.org/BBaoVanC/NameGenerator)
+[![Travis](https://img.shields.io/travis/BBaoVanC/NameGenerator.svg)](https://github.com/BBaoVanC/NameGenerator)
 [![license](https://img.shields.io/github/license/BBaoVanC/NameGenerator.svg)](https://github.com/BBaoVanC/NameGenerator/blob/master/LICENSE.txt)
 [![Github All Releases](https://img.shields.io/github/downloads/BBaoVanC/NameGenerator/total.svg)](https://github.com/BBaoVanC/NameGenerator)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/6621a967fffe47069d53b19129b7be0c)](https://www.codacy.com/manual/BBaoVanC/NameGenerator?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=BBaoVanC/NameGenerator&amp;utm_campaign=Badge_Grade)
@@ -27,42 +27,11 @@ Robust name generator that generates awesome names!
 
 ---
 
-## How to Download
+### Command-Line Examples
 
-To download the latest stable version of NameGenerator, click the green button labeled `Clone or download`. Then, click `Download ZIP` to download a ZIP archive containing all of the files. Then, extract the archive.
+To use the command-line or double-click launch, you must have namegen.py and the generators folder. If you only use specific generators, you don't need to download the other unused ones.
 
-![Clone or download button](https://i.imgur.com/1SHfJzR.png)
-
----
-
-## FAQ
-
-**I get an error when I run namegen.py or use the CLI.**
-
-If you get this error (or similar):
-
-``` python
-  File "namegen.py", line 87
-    print("Preparing list to write to file", end="\r")  # log message
-                                                ^
-SyntaxError: invalid syntax
-```
-
-Check your Python version. NameGenerator doesn't work on Python 2. It's also only *tested* on the latest 3 versions of Python 3. There is no guarantee that NameGenerator will work on earlier versions.
-
----
-
-## Documentation
-
-### Command-Line Interface
-
-To use the command-line interface, you must have namegen.py and the generators folder. If you will only use specific generators, you don't need to download the other unused ones.
-
-Please note that this program is written for Python 3.
-
-If you use Windows, use the command `py` instead of `python`. If you have both Python 2 and Python 3 installed, use `py -3`.
-
-If you use Mac/Linux, and have both Python 2 and Python 3 installed, then use the command `python3`.
+Please note that this program is written for Python 3. It might work in Python 2, but there is no guarantee. If you have both Python 2 and 3 installed, use the command `python3` instead of `python`.
 
 Use defaults (100 names, debug enabled, classic method, write names to names.txt):
 
@@ -177,7 +146,7 @@ Double-clicking namegen.py will generate using default options.
 
 ---
 
-### API
+### API Examples
 
 To use the API, you only need the generators folder.
 
@@ -230,6 +199,21 @@ print(random.gen(length=15))
 
 ---
 
-## License
+### Troubleshooting + Python 2
+
+If you get this error (or similar):
+
+``` python
+  File "namegen.py", line 87
+    print("Preparing list to write to file", end="\r")  # log message
+                                                ^
+SyntaxError: invalid syntax
+```
+
+Check your Python version. NameGenerator doesn't work on Python 2. It's also only *tested* on the latest 3 versions of Python 3. It may work on earlier Python 3 versions, but there is no guarantee.
+
+---
+
+### License
 
 _NameGenerator_ is licensed under the GPLv3 license. For more information, please refer to [`LICENSE.txt`](https://github.com/BBaoVanC/NameGenerator/blob/master/LICENSE.txt)
