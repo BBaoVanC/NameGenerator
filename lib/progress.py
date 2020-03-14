@@ -6,7 +6,7 @@ by BBaoVanC
 
 This library allows easy generation of progress bars.
 
-Copyright (C) 2020 BBaoVanC
+Copyright (C) 2019 BBaoVanC
 """
 
 

@@ -11,7 +11,7 @@ Examples:
     Mw6xAKYulItJ
     qK1Kpv89fJj1
 
-Copyright (C) 2020 BBaoVanC
+Copyright (C) 2019 BBaoVanC
 """
 
 # Imports

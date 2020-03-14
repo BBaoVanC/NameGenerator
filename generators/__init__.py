@@ -8,7 +8,7 @@ by BBaoVanC
 This is a package which contains the various name generation methods used in
 https://github.com/BBaoVanC/NameGenerator
 
-Copyright (C) 2020 BBaoVanC
+Copyright (C) 2019 BBaoVanC
 """
 
 # Imports
