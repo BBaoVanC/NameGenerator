@@ -1,7 +1,7 @@
 # NameGenerator
 
 [![AWESOMENESS](https://img.shields.io/badge/awesomeness-maximum-00a0af.svg)](https://www.youtube.com/channel/UCCiDxF_RZ4fTU_gGJRz-fwQ)
-[![Travis](https://img.shields.io/travis/BBaoVanC/NameGenerator.svg)](https://github.com/BBaoVanC/NameGenerator)
+[![Build Status](https://travis-ci.org/BBaoVanC/NameGenerator.svg?branch=master)](https://travis-ci.org/BBaoVanC/NameGenerator)
 [![license](https://img.shields.io/github/license/BBaoVanC/NameGenerator.svg)](https://github.com/BBaoVanC/NameGenerator/blob/master/LICENSE.txt)
 [![Github All Releases](https://img.shields.io/github/downloads/BBaoVanC/NameGenerator/total.svg)](https://github.com/BBaoVanC/NameGenerator)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/6621a967fffe47069d53b19129b7be0c)](https://www.codacy.com/manual/BBaoVanC/NameGenerator?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=BBaoVanC/NameGenerator&amp;utm_campaign=Badge_Grade)
