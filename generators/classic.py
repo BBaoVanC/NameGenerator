@@ -11,7 +11,7 @@ Examples:
     Coinifier_313
     COMPONENTGUY290
 
-Copyright (C) 2019 BBaoVanC
+Copyright (C) 2020 BBaoVanC
 """
 
 # Imports
