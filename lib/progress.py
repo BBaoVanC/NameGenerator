@@ -15,8 +15,9 @@ def genbar(length=20, curprg=0, maxprg=100):
     """
     Generate a progress bar.
 
-    curprg: the current progress
-    maxprg: the maximum progress
+    Arguments:
+    curprg -- the current progress
+    maxprg -- the maximum progress
 
     The design of the progress bar:
     Progress: [#####---------------] 25%
