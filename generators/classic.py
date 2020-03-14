@@ -26,7 +26,13 @@ if not os.path.isfile("generators/desiquintans.com_nounlist.txt"):
 
 # Generation method
 def gen(count=1, debug=False):
-    """Generate names using the classic method."""
+    """
+    Generate names using the classic method.
+
+    Arguments:
+    count -- the amount of names to generate (default 1)
+    debug -- whether debug should be printed (default False)
+    """
     with open("generators/desiquintans.com_nounlist.txt") as f:  # open file
         words = f.readlines()  # read all lines into a list
         # closing the file is not required, the with block does that for us

@@ -21,7 +21,13 @@ import lib.progress
 
 # Generation method
 def gen(count=1, debug=False, length=12):
-    """Generate names using the random method."""
+    """
+    Generate names using the random method.
+
+    Arguments:
+    count -- the amount of names to generate (default 1)
+    debug -- whether debug should be printed (default False)
+    """
     names = list()  # prepare blank names list
     n = 1  # prepare loop counter
 

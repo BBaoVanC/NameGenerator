@@ -25,7 +25,13 @@ if not os.path.isfile("generators/[requiredfile]"):
 
 # Generation method
 def gen(count=1, debug=False):  # you may add more arguments after debug
-    """Generate names with the [methodname] method."""
+    """
+    Generate names with the [methodname] method.
+
+    Arguments:
+    count -- the amount of names to generate (default 1)
+    debug -- whether debug should be printed (default False)
+    """
     with open("generators/[requiredfile]") as f:  # use this block to read all
         # the data in your file
         words = f.readlines()  # read the file
