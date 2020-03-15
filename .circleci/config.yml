@@ -1,15 +1,41 @@
-version: 2.1
 jobs:
-  build:
+  python36:
     docker:
       - image: circleci/python:3.6.9  # python 3.6
-      - image: circleci/python:3.7.7  # python 3.7
-      - image: circleci/python:3.8.2  # python 3.8
     steps:
       - checkout
       - run:
-          name: CLI Test
+          name: Python 3.6 CLI Test
           command: |
             python3 -V
             bash ./testing-run.sh
             bash ./regenerate-names.sh
+  python37:
+    docker:
+      - image: circleci/python:3.7.7  # python 3.7
+    steps:
+      - checkout
+      - run:
+          name: Python 3.7 CLI Test
+          command: |
+            python3 -V
+            bash ./testing-run.sh
+            bash ./regenerate-names.sh
+  python38:
+    docker:
+      - image: circleci/python:3.8.2  # python 3.8
+    steps:
+      - checkout
+      - run:
+          name: Python 3.8 CLI Test
+          command: |
+            python3 -V
+            bash ./testing-run.sh
+            bash ./regenerate-names.sh
+workflows:
+  version: 2.1
+  run_all:
+    jobs:
+      - python36
+      - python37
+      - python38
