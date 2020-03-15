@@ -12,7 +12,7 @@ Copyright (C) 2020 BBaoVanC
 
 # Imports
 import sys
-import lib.progress
+import libprogress
 
 
 class ArgError(Exception):  # custom error for invalid arguments
@@ -107,10 +107,10 @@ if gennames is True:  # if we should generate the names
     for indx, item in enumerate(usernames2):  # indx is the index
         file.write(item)  # write each username to the file
         if args["debug"]:  # if we should output debug information
-            print(lib.progress.genbar(curprg=indx+1, maxprg=wtotal), end="\r")
+            print(libprogress.genbar(curprg=indx+1, maxprg=wtotal), end="\r")
             # ^^^ log message ^^^ #
     if args["debug"]:  # if we should output debug information
-        print(lib.progress.genbar(curprg=indx+1, maxprg=wtotal) + "...done")
+        print(libprogress.genfullbar(prg=wtotal))
         print("Saving file...")  # log message
     file.close()  # close the file and apply our changes
     if args["debug"]:  # if we should output debug information
