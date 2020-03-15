@@ -1,17 +1,17 @@
 version: 2.1
 jobs:
   build:
-    working_directory: ~/circleci-python-namegenerator
     docker:
       - image: circleci/python:3.6.9  # python 3.6
       - image: circleci/python:3.7.7  # python 3.7
       - image: circleci/python:3.8.2  # python 3.8
     steps:
-      - run: 
-        command: |
-          echo "TESTING CLASSIC GENERATOR:"
-          python3 namegen.py debug=True file=classic.txt method=classic
-          echo "TESTING RANDOM GENERATOR:"
-          python3 namegen.py debug=True file=random.txt method=random
-          echo "TESTING REGENERATE NAMES SCRIPT:"
-          bash ../regenerate-names.sh
+      - run:
+          name: CLI Test
+          command: |
+            echo "TESTING CLASSIC GENERATOR:"
+            python3 namegen.py debug=True file=classic.txt method=classic
+            echo "TESTING RANDOM GENERATOR:"
+            python3 namegen.py debug=True file=random.txt method=random
+            echo "TESTING REGENERATE NAMES SCRIPT:"
+            bash ../regenerate-names.sh
