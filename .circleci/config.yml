@@ -6,11 +6,9 @@ jobs:
       - image: circleci/python:3.7.7  # python 3.7
       - image: circleci/python:3.8.2  # python 3.8
     steps:
-      - checkout:
-        path: ~/project
+      - checkout
       - run:
           name: CLI Test
-          working_directory: ~/project
           command: |
             pwd
             ls -la
