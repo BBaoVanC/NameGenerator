@@ -64,17 +64,17 @@ for arg in cmdline:  # this block converts 'cmdline' to dictionary 'args'
         msel = True  # note that the method has been selected
         b = arg.split("=")[1].lower()  # convert argument to lowercase
         if b == "classic":  # if method is 'classic'
-            from generators import classic  # import the classic method
+            from libnamegen import classic  # import the classic method
             args["method"] = classic  # save this in argument list
         elif b == "random":  # if method is 'random'
-            from generators import random  # if method is the random gen
+            from libnamegen import random  # if method is the random gen
             args["method"] = random  # save this in argument list
         else:  # if none of the existing methods was selected
             raise(ArgError("Arg for 'method' is invalid"))
 
 if gennames is True:  # if we should generate the names
     if not msel:  # if the method hasn't been selected
-        from generators import classic  # import the classic method
+        from libnamegen import classic  # import the classic method
         args["method"] = classic  # save the method in argument list
     if args["debug"]:  # if we should output debug information
         print("Generating names...")  # log message
