@@ -41,7 +41,7 @@ def genfullbar(length=20, prg=100):
     prg -- the progress total
 
     The design of the progress bar:
-    [#####---------------] 25%...done
+    [####################] 100% [1000/1000]...done
     """
     fullbar = "{}...done".format(genbar(length, prg, prg))
     return fullbar
