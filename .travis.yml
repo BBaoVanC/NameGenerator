@@ -9,3 +9,4 @@ python:
 # command to run tests
 script:
   - bash ./testing-run.sh
+  - bash ./regenerate-names.sh

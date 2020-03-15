@@ -1,12 +1,45 @@
-version: 2.1
 jobs:
-  build:
-    working_directory: ~/circleci-python-namegenerator
+  python36:
     docker:
-      - image: circleci/python:3.6.9  # python 3.6
-      - image: circleci/python:3.7.7  # python 3.7
-      - image: circleci/python:3.8.2  # python 3.8
+      - image: circleci/python:3.6.9
     steps:
+      - checkout
       - run:
-        command: |
-          bash ./testing-run.sh
+          name: Python 3.6.9 CLI Test
+          command: |
+            python3 -V
+            bash ./testing-run.sh
+            bash ./regenerate-names.sh
+  python37:
+    docker:
+      - image: circleci/python:3.7.7
+    steps:
+      - checkout
+      - run:
+          name: Python 3.7.7 CLI Test
+          command: |
+            python3 -V
+            bash ./testing-run.sh
+            bash ./regenerate-names.sh
+  python38:
+    docker:
+      - image: circleci/python:3.8.2
+    steps:
+      - checkout
+      - run:
+          name: Python 3.8.2 CLI Test
+          command: |
+            python3 -V
+            bash ./testing-run.sh
+            bash ./regenerate-names.sh
+workflows:
+  version: 2
+  circleci_python3.6:
+    jobs:
+      - python36
+  circleci_python3.7:
+    jobs:
+      - python37
+  circleci_python3.8:
+    jobs:
+      - python38
