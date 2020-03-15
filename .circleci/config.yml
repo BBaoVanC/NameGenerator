@@ -10,8 +10,7 @@ jobs:
       - run:
           name: CLI Test
           command: |
-            pwd
-            ls -la
+            python3 -V
             echo "TESTING CLASSIC GENERATOR:"
             python3 namegen.py debug=True file=classic.txt method=classic
             echo "TESTING RANDOM GENERATOR:"
