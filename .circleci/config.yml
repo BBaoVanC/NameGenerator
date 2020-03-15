@@ -1,5 +1,5 @@
 jobs:
-  python3.6:
+  python36:
     docker:
       - image: circleci/python:3.6.9
     steps:
@@ -10,7 +10,7 @@ jobs:
             python3 -V
             bash ./testing-run.sh
             bash ./regenerate-names.sh
-  python3.7:
+  python37:
     docker:
       - image: circleci/python:3.7.7
     steps:
@@ -21,7 +21,7 @@ jobs:
             python3 -V
             bash ./testing-run.sh
             bash ./regenerate-names.sh
-  python3.8:
+  python38:
     docker:
       - image: circleci/python:3.8.2
     steps:
@@ -36,6 +36,6 @@ workflows:
   version: 2
   run_all:
     jobs:
-      - python3.6
-      - python3.7
-      - python3.8
+      - python36
+      - python37
+      - python38
