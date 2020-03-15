@@ -29,9 +29,13 @@ Robust name generator that generates awesome names!
 
 ## How to Download
 
-To download the latest stable version of NameGenerator, click the green button labeled `Clone or download`. Then, click `Download ZIP` to download a ZIP archive containing all of the files. Then, extract the archive.
+To download the latest stable version of NameGenerator, click the button labeled `Releases` above the file explorer.
 
-![Clone or download button](https://i.imgur.com/1SHfJzR.png)
+![Releases button](https://i.imgur.com/EWNIpBn.png)
+
+Then, under the release labeled `Latest release`, click the button labeled `Source Code (zip)` under `Assets`. Then extract the downloaded zip archive.
+
+![Download button](https://i.imgur.com/PPqLAQu.png)
 
 ---
 
