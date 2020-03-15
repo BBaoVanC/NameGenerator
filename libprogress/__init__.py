@@ -23,11 +23,11 @@ def genbar(length=20, curprg=0, maxprg=100):
     The design of the progress bar:
     [#####---------------] 25% [253/1000]
     """
-    percent = round(curprg/maxprg, 2)  # percentage has two decimal places
-    barsfilled = int(round(length*percent, 0))  # calculate bars filled
-    barsunfilled = int(length-barsfilled)  # calculate bars not filled
-    progbar = "[{}{}]".format("#"*barsfilled, "-"*barsunfilled)  # make bar
-    barinfo = "{}% [{}/{}]".format(int(percent*100), curprg, maxprg)
+    percent = round(curprg / maxprg, 2)  # percentage has two decimal places
+    barsfilled = int(round(length * percent, 0))  # calculate bars filled
+    barsunfilled = int(length - barsfilled)  # calculate bars not filled
+    progbar = "[{}{}]".format("#" * barsfilled, "-" * barsunfilled)  # make bar
+    barinfo = "{}% [{}/{}]".format(int(percent * 100), curprg, maxprg)
     return "{} {}".format(progbar, barinfo)  # return output
 
 
