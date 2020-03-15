@@ -19,7 +19,7 @@ import os
 
 # the following two lines of code are not required since they are only for
 # requiring a file.
-if not os.path.isfile("generators/[requiredfile]"):
+if not os.path.isfile("libnamegen/[requiredfile]"):
     print("ERROR: [requiredfile] could not be found!")
 
 
@@ -32,7 +32,7 @@ def gen(count=1, debug=False):  # you may add more arguments after debug
     count -- the amount of names to generate (default 1)
     debug -- whether debug should be printed (default False)
     """
-    with open("generators/[requiredfile]") as f:  # use this block to read all
+    with open("libnamegen/[requiredfile]") as f:  # use this block to read all
         # the data in your file
         words = f.readlines()  # read the file
     words = [x.strip() for x in words]  # remove newlines, now each line in
