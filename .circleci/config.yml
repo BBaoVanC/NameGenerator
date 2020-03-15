@@ -34,8 +34,9 @@ jobs:
             bash ./regenerate-names.sh
 workflows:
   version: 2
-  run_all:
-    jobs:
-      - python36
-      - python37
-      - python38
+  python3.6:
+    jobs: python36
+  python3.7:
+    jobs: python37
+  python3.8:
+    jobs: python38
