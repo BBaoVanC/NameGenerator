@@ -16,6 +16,7 @@ Examples:
 import os
 # ^^^ this is only necessary if you use this module, or if you require a
 #     file as seen below.
+import libprogress
 
 # the following two lines of code are not required since they are only for
 # requiring a file.
@@ -45,11 +46,12 @@ def gen(count=1, debug=False):  # you may add more arguments after debug
         name = "generated_name"  # this should generate a name and save it in
         # a variable named 'name'
         if debug:  # if we should output debug information
-            print("Generated name: ({}/{})".format(n-1, count),
-                  end="\r")  # log message for generated names
+            # print progress bar
+            print(libprogress.genbar(curprg=n-1, maxprg=count), end="\r")
         names.append(name)  # add name to list
         n = n + 1  # increase counter
 
     if debug:  # if we should output debug information
-        print("Generated name: ({}/{})...done".format(n-1, count))  # log msg
+        # print last progress bar
+        print(libprogress.genfullbar(prg=count))
     return names  # return the names list
