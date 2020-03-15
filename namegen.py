@@ -41,7 +41,7 @@ msel = False  # saves if the method has been selected
 gennames = True  # saves if names should be generated
 for arg in cmdline:  # this block converts 'cmdline' to dictionary 'args'
     if arg in ["--help", "-h", "help"]:  # if one of the help options is used
-    	print(helptxt)  # print the help menu text
+        print(helptxt)  # print the help menu text
         gennames = False  # don't generate names
         break  # break out of the loop to prevent other args from being checked
 
