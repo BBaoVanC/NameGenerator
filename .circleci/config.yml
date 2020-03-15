@@ -7,13 +7,15 @@ jobs:
       - image: circleci/python:3.8.2  # python 3.8
     steps:
       - checkout
+      - store_test_results:
+        path: test-results
       - run:
           name: CLI Test
           command: |
             python3 -V
-            echo "TESTING CLASSIC GENERATOR:"
-            python3 namegen.py debug=True file=classic.txt method=classic
-            echo "TESTING RANDOM GENERATOR:"
-            python3 namegen.py debug=True file=random.txt method=random
-            echo "TESTING REGENERATE NAMES SCRIPT:"
+            bash ./testing-run.sh
             bash ./regenerate-names.sh
+      - store_artifacts:
+        path: classic.txt
+      - store_artifacts:
+        path: random.txt
