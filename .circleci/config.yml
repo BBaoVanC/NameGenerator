@@ -7,7 +7,7 @@ jobs:
       - image: circleci/python:3.7.7  # python 3.7
       - image: circleci/python:3.8.2  # python 3.8
     steps:
-      run: 
+      - run: 
         command: |
           echo "TESTING CLASSIC GENERATOR:"
           python3 namegen.py debug=True file=classic.txt method=classic
