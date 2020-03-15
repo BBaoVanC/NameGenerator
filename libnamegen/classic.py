@@ -17,7 +17,7 @@ Copyright (C) 2020 BBaoVanC
 # Imports
 import os
 import random
-import lib.progress
+import libprogress
 
 # following block is for a file requirement
 if not os.path.isfile("generators/desiquintans.com_nounlist.txt"):
@@ -77,11 +77,11 @@ def gen(count=1, debug=False):
         name = str(word) + str(space) + str(number)
         if debug:  # if we should output debug information
             # print progress bar
-            print(lib.progress.genbar(curprg=n-1, maxprg=count), end="\r")
+            print(libprogress.genbar(curprg=n-1, maxprg=count), end="\r")
         names.append(name)  # add name to list of generated names
         n = n + 1  # increases our loop counter
 
     if debug:  # if we should output debug information
         # print last progress bar
-        print(lib.progress.genbar(curprg=n-1, maxprg=count) + "...done")
+        print(libprogress.genfullbar(prg=count))
     return names  # return the generated names

@@ -12,5 +12,5 @@ Copyright (C) 2020 BBaoVanC
 """
 
 # Imports
-import generators.classic  # NOQA
-import generators.random  # NOQA
+import libnamegen.classic  # NOQA
+import libnamegen.random  # NOQA
